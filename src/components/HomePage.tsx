@@ -3,7 +3,7 @@ import { buttonVariants } from "@/components/ui/button";
 
 export default function HomePage() {
   return (
-    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+    <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10 justify-items-center">
       <div className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter md:text-4xl">
         LinkZip:<br className="hidden sm:inline" />
@@ -18,9 +18,16 @@ export default function HomePage() {
       
         <a
           href={siteConfig.links.github}
-          className={buttonVariants({ variant: "outline" })}
+          className={buttonVariants({ variant: "outline", size:"lg" })}
         >
-          GitHub
+          Shorten Links
+        </a>
+
+        <a
+          href={siteConfig.links.github}
+          className={buttonVariants({ variant: "outline" , size:"lg" })}
+        >
+          Make Link Trees
         </a>
       </div>
     </section>
