@@ -20,14 +20,14 @@ export default function HomePage() {
           href={siteConfig.links.github}
           className={buttonVariants({ variant: "outline", size:"lg" })}
         >
-          Shorten Links
+          <span className=" text-xl">Shorten Links</span>
         </a>
 
         <a
           href={siteConfig.links.github}
           className={buttonVariants({ variant: "outline" , size:"lg" })}
         >
-          Make Link Trees
+          <span className=" text-xl">Make Link Trees</span>
         </a>
       </div>
     </section>
