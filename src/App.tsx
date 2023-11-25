@@ -1,12 +1,10 @@
 import Layout from "./Layout";
-import HomePage from "@/components/HomePage";
-import ShortenUrl from './components/ShortenUrl'
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <Layout>
-      <HomePage />
-      <ShortenUrl />
+      <Outlet />
     </Layout>
   );
 }

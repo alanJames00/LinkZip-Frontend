@@ -1,6 +1,5 @@
 
-
-export default function LinkTreeMaker() {
+export default function CreateLinkTree() {
 
     return (
         <div>
