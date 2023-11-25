@@ -1,10 +1,10 @@
 import React from "react"
 
-export default function LinkTreeMaker() {
+export default function ShortenUrl() {
 
     return (
         <div>
-            link tree maker
+            from shorten url
         </div>
     )
 }
