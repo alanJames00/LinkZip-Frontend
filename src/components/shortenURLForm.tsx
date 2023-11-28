@@ -1,6 +1,9 @@
-
+import { useState } from "react";
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
 export default function ShortenUrlForm() {
 
+    const [url, setUrl] = useState("");
     
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 
@@ -11,7 +14,8 @@ export default function ShortenUrlForm() {
         <div>
 
             <form onSubmit={handleSubmit}>
-            <input type="email" />
+            
+
 
             </form>
         </div>
