@@ -7,6 +7,7 @@ import ShortenUrl from './components/ShortenUrl.tsx'
 import HomePage from './components/HomePage.tsx'
 import CreateLinkTree from './components/createLinkTree.tsx'
 import UrlNotFound from './components/UrlNotFound.tsx'
+import AboutMe from './components/AboutMe.tsx'
 
 const router = createHashRouter(
   createRoutesFromElements(
@@ -15,6 +16,7 @@ const router = createHashRouter(
       <Route path='/shorten' element={<ShortenUrl />} />
       <Route path='/createTree' element={<CreateLinkTree />} />
       <Route path='/urlNotFound' element={<UrlNotFound />} />
+      <Route path='/aboutMe' element={<AboutMe />} />
     </Route>
   )
 )
