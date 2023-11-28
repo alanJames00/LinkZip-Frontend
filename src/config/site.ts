@@ -16,6 +16,10 @@ export const siteConfig = {
     {
       title: "Link Trees",
       href: "/createTree",
+    },
+    {
+      
+      href: "/urlNotFound",
     }
   ],
   links: {
