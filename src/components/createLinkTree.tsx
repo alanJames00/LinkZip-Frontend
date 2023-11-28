@@ -3,7 +3,7 @@ export default function CreateLinkTree() {
 
     return (
         <div>
-            link tree maker component
+            linkTree is Down
         </div>
     )
 }
