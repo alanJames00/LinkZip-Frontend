@@ -15,13 +15,13 @@ import { useState } from "react"
 
 export function ResultCard(props: any) {
 
-    const [url, setUrl] = useState('aaa');
+    const [shortUrl, setShortUrl] = useState(props.result.respJson.short_url);
     const [isSucess, setSuccess] = useState(props.result.success);
     console.log(isSucess);
       
     const handleCopy = () => {
         // Logic to copy the URL to the clipboard
-        navigator.clipboard.writeText(url);
+        navigator.clipboard.writeText(shortUrl);
     };
   return (
     
@@ -39,9 +39,9 @@ export function ResultCard(props: any) {
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Shortened URL</Label>
               <code>{props.result.respJson.short_url}</code>
-                {/* <button type="button" onClick={handleCopy}>
+                <button type="button" onClick={handleCopy}>
                 Copy
-                </button> */}
+                </button>
             </div>
 
             <div className="flex flex-col space-y-1.5">

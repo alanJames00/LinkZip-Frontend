@@ -37,12 +37,12 @@ export default function ShortenUrlForm() {
               console.log('POST request successful');
               const respJson = await response.json();
               console.log(respJson);
-              if(respJson.info = "the shortened url already exists, try new one"){
+
+              if(respJson.info == "the shortened url already exists, try new one"){
                 setApiResponse({success:false, respJson})
                 
               }
               else{
-
                   setApiResponse({success: true, respJson});
                 }
               
