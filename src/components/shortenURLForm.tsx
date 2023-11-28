@@ -32,12 +32,12 @@ export default function ShortenUrlForm() {
 
         // call fetch
         try {
-            const response = await fetch('http://localhost:3000/test', {
+            const response = await fetch('https://lz.linkzip.co/shorten', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
               },
-              body: JSON.stringify({ url, randomUrl: !isCustomUrl, shorturl:customUrl}),
+              body: JSON.stringify({ url, randomUrl: (!isCustomUrl).toString(), shorturl:customUrl}),
             });
         
             if (response.ok) {
@@ -89,7 +89,7 @@ export default function ShortenUrlForm() {
             placeholder="Enter the URL To Shorten" 
             className=" w-[100%] my-2"/>
             
-            {isInvalidUrl && <p>Invalid URL</p>}
+            {isInvalidUrl && <p>Invalid URL </p>}
             
             
             <div className="flex items-center space-x-2 mb-10 my-3" >
