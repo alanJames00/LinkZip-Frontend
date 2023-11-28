@@ -72,15 +72,14 @@ export default function ShortenUrlForm() {
             })
           } 
           setShowResult(true);
-        
-        // renable button after submission
-        setSubmitting(false);
+          // renable button after submission
+          setSubmitting(false);
     }
 
     return (
         <div className=" ml-[35%]">
 
-            <form onSubmit={handleSubmit}>
+            <form>
             
             <div className="w-full max-w-sm items-center space-x-24">
             <Input type="text" 
@@ -110,7 +109,8 @@ export default function ShortenUrlForm() {
      
         
             <Button
-            type="submit" 
+            
+            onClick={handleSubmit}
             className=" px-[20%] mb-10"
             disabled={isSubmitting}
             >Shorten</Button>
