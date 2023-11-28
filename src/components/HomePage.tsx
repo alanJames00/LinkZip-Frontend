@@ -17,14 +17,14 @@ export default function HomePage() {
       <div className="flex gap-4">
       
         <a
-          href={siteConfig.links.github}
+          href={siteConfig.mainNav[1].href}
           className={buttonVariants({ variant: "outline", size:"lg" })}
         >
           <span className=" text-xl">Shorten Links</span>
         </a>
 
         <a
-          href={siteConfig.links.github}
+          href={siteConfig.mainNav[2].href}
           className={buttonVariants({ variant: "outline" , size:"lg" })}
         >
           <span className=" text-xl">Make Link Trees</span>
