@@ -6,7 +6,8 @@ export default function ShortenUrlForm() {
     const [url, setUrl] = useState("");
     
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-
+        e.preventDefault();
+        
         console.log(e);
     }
 
@@ -15,9 +16,9 @@ export default function ShortenUrlForm() {
 
             <form onSubmit={handleSubmit}>
             
-            <div className="flex w-full max-w-sm items-center space-x-2">
-            <Input type="email" placeholder="Email" />
-            <Button type="submit">Subscribe</Button>
+            <div className="w-full max-w-sm items-center space-x-24">
+            <Input type="text" placeholder="Enter the URL To Shorten" className=" px-20"/>
+            <Button type="submit" className=" my-10 px-16">Shorten</Button>
             </div>
 
             </form>
