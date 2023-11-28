@@ -67,7 +67,7 @@ export function ResultCard(props: any) {
         <CardHeader>
           <CardTitle>An Error Occurred</CardTitle>
           {props.result.respJson.info=="the shortened url already exists, try new one" && <CardDescription>Custom Shortened URL Already exists, Try Another One</CardDescription>}
-          {props.result.respJson.info=="network error" && <CardDescription>Network Error, ERR_INTERNET_DISCONNECTED</CardDescription>}
+          {props.result.respJson.info=="network error" && <CardDescription>Network Error, Can't Connect To Server</CardDescription>}
 
         </CardHeader>
         </Card>
