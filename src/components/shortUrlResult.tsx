@@ -57,7 +57,6 @@ export function ResultCard(props: any) {
         
       </CardContent>
       <CardFooter className="flex justify-between">
-        <Button variant="outline">Close</Button>
       </CardFooter>
     </Card>
     }

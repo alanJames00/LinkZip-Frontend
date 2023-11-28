@@ -15,7 +15,7 @@ export default function ShortenUrlForm() {
     const [apiResponse, setApiResponse] = useState({});
     const [isInvalidUrl, setInvalidUrl] = useState(false);
     
-    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit(e: any) {
         e.preventDefault();
 
 
@@ -109,7 +109,7 @@ export default function ShortenUrlForm() {
      
         
             <Button
-            
+
             onClick={handleSubmit}
             className=" px-[20%] mb-10"
             disabled={isSubmitting}
