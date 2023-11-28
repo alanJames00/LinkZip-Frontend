@@ -15,8 +15,8 @@ import { useState } from "react"
 
 export function ResultCard(props: any) {
 
-    const [shortUrl, setShortUrl] = useState(props.result.respJson.short_url);
-    const [isSucess, setSuccess] = useState(props.result.success);
+    const [shortUrl] = useState(props.result.respJson.short_url);
+    const [isSucess] = useState(props.result.success);
     console.log(isSucess);
       
     const handleCopy = (e:  any) => {
