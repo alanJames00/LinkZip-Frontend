@@ -11,15 +11,11 @@ export const siteConfig = {
     },
     {
       title: "Shorten",
-      href: "/shorten",
+      href: "/#/shorten",
     },
     {
       title: "Link Trees",
-      href: "/createTree",
-    },
-    {
-      
-      href: "/urlNotFound",
+      href: "/#/createTree",
     }
   ],
   links: {
