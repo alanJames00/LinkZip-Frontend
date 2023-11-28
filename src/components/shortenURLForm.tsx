@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { ResultCard } from "./shortUrlResult";
 export default function ShortenUrlForm() {
 
     const [url, setUrl] = useState("");
@@ -8,12 +9,15 @@ export default function ShortenUrlForm() {
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
+        // disable button while submitting
+        // validate url on client side
+        // call fetch
         console.log(url); 
 
     }
 
     return (
-        <div>
+        <div className=" ml-[35%]">
 
             <form onSubmit={handleSubmit}>
             
@@ -22,17 +26,22 @@ export default function ShortenUrlForm() {
             value={url}
             onChange={(e) => setUrl(e.target.value)}
             placeholder="Enter the URL To Shorten" 
-            className=" px-20"/>
+            className=" w-[100%] my-10"/>
 
             <Button
             type="submit" 
-            className=" my-10 px-16"
+            className=" px-[20%] mb-10"
             >Shorten</Button>
+
+
+            <ResultCard /> 
+
 
             </div>
 
             </form>
-        </div>
+
+    </div>
 
     );
 }
