@@ -23,17 +23,13 @@ export default function ShortenUrlForm() {
         // validate url on client side
         // call fetch
 
-        console.log(isCustomUrl);
-        console.log(url);
-        console.log(customUrl);
-
         try {
             const response = await fetch('http://localhost:3000/test', {
               method: 'POST',
               headers: {
                 'Content-Type': 'application/json',
               },
-              body: JSON.stringify({ url, randomUrl:!isCustomUrl, shorturl:customUrl}),
+              body: JSON.stringify({ url, randomUrl: !isCustomUrl, shorturl:customUrl}),
             });
         
             if (response.ok) {
@@ -41,21 +37,33 @@ export default function ShortenUrlForm() {
               console.log('POST request successful');
               const respJson = await response.json();
               console.log(respJson);
-              setApiResponse({success: true, respJson});
-              setShowResult(true);
+              if(respJson.info = "the shortened url already exists, try new one"){
+                setApiResponse({success:false, respJson})
+                
+              }
+              else{
+
+                  setApiResponse({success: true, respJson});
+                }
               
             } else {
               // Handle error response
               setApiResponse({success:false})
             }
+            
           } catch (error) {
             // Handle network error
             console.log('An error occurred', error);
             setApiResponse({
                 success:false,
+                respJson:{
+                    info:'network error'
+                },
                 error,
+
             })
           } 
+          setShowResult(true);
         
         // renable button after submission
         setSubmitting(false);
