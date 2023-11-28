@@ -11,8 +11,10 @@ export default function ShortenUrlForm() {
     const [isCustomUrl, setIsCustomUrl ] = useState(false);
     const [customUrl, setCustomUrl] = useState("");
     const [isSubmitting, setSubmitting] = useState(false);
+    const [showResult, setShowResult] = useState(false);
+    const [apiResponse, setApiResponse] = useState({});
     
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
 
@@ -24,7 +26,36 @@ export default function ShortenUrlForm() {
         console.log(isCustomUrl);
         console.log(url);
         console.log(customUrl);
-      
+
+        try {
+            const response = await fetch('http://localhost:3000/test', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ url, randomUrl:!isCustomUrl, shorturl:customUrl}),
+            });
+        
+            if (response.ok) {
+              // Handle successful response
+              console.log('POST request successful');
+              const respJson = await response.json();
+              console.log(respJson);
+              setApiResponse({success: true, respJson});
+              setShowResult(true);
+              
+            } else {
+              // Handle error response
+              setApiResponse({success:false})
+            }
+          } catch (error) {
+            // Handle network error
+            console.log('An error occurred', error);
+            setApiResponse({
+                success:false,
+                error,
+            })
+          } 
         
         // renable button after submission
         setSubmitting(false);
@@ -67,8 +98,7 @@ export default function ShortenUrlForm() {
             >Shorten</Button>
 
         
-
-            <ResultCard /> 
+        {  showResult && <ResultCard result={apiResponse} /> }
 
             </div>
 
