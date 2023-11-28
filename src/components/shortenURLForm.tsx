@@ -10,17 +10,24 @@ export default function ShortenUrlForm() {
     const [url, setUrl] = useState("");
     const [isCustomUrl, setIsCustomUrl ] = useState(false);
     const [customUrl, setCustomUrl] = useState("");
+    const [isSubmitting, setSubmitting] = useState(false);
     
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
 
+
         // disable button while submitting
+        setSubmitting(true);
         // validate url on client side
         // call fetch
-        console.log(url); 
 
+        console.log(isCustomUrl);
+        console.log(url);
+        console.log(customUrl);
+      
         
-        console.log(e);
+        // renable button after submission
+        setSubmitting(false);
     }
 
     return (
@@ -56,6 +63,7 @@ export default function ShortenUrlForm() {
             <Button
             type="submit" 
             className=" px-[20%] mb-10"
+            disabled={isSubmitting}
             >Shorten</Button>
 
         
