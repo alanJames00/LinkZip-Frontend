@@ -38,9 +38,6 @@ export default function ShortenUrlForm() {
 
             <ResultCard /> 
 
-
-            <Input type="text" placeholder="Enter the URL To Shorten" className=" px-20"/>
-            <Button type="submit" className=" my-10 px-16">Shorten</Button>
             </div>
 
             </form>
