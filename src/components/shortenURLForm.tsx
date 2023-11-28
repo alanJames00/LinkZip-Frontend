@@ -13,6 +13,7 @@ export default function ShortenUrlForm() {
     const [isSubmitting, setSubmitting] = useState(false);
     const [showResult, setShowResult] = useState(false);
     const [apiResponse, setApiResponse] = useState({});
+    const [isInvalidUrl, setInvalidUrl] = useState(false);
     
     async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -20,9 +21,16 @@ export default function ShortenUrlForm() {
 
         // disable button while submitting
         setSubmitting(true);
-        // validate url on client side
-        // call fetch
+        // validate url on client side using regex
 
+        let urlRegex = new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&\/\/=]*)/);
+
+        if (!url.match(urlRegex)) {
+            setInvalidUrl(true);
+            return;
+        }
+
+        // call fetch
         try {
             const response = await fetch('http://localhost:3000/test', {
               method: 'POST',
@@ -80,6 +88,8 @@ export default function ShortenUrlForm() {
             onChange={(e) => setUrl(e.target.value)}
             placeholder="Enter the URL To Shorten" 
             className=" w-[100%] my-2"/>
+            
+            {isInvalidUrl && <p>Invalid URL</p>}
             
             
             <div className="flex items-center space-x-2 mb-10 my-3" >
