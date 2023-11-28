@@ -11,8 +11,17 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+import { useState } from "react"
 
-export function ResultCard() {
+export function ResultCard(props: any) {
+
+    const [url, setUrl] = useState('aaa');
+        
+
+    const handleCopy = () => {
+        // Logic to copy the URL to the clipboard
+        navigator.clipboard.writeText(url);
+    };
   return (
     <div>
 
@@ -26,12 +35,15 @@ export function ResultCard() {
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Shortened URL</Label>
-              <Input id="name" placeholder="Name of your project" />
+              <code>{'https://lz.linkzip.co/shortened-url'}</code>
+                {/* <button type="button" onClick={handleCopy}>
+                Copy
+                </button> */}
             </div>
 
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="name">Original URL</Label>
-              <Input id="name" placeholder="Name of your project" />
+              <code>{'https://lz.linkzip.co/shortened-url'}</code>
             </div>
            
           </div>
