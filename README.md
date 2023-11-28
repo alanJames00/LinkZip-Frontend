@@ -1,2 +1,2 @@
 # LinkZip Frontend
-Prod URL: https://linkzip.netlify.app/
+Prod Site: https://dashboard.linkzip.co/
