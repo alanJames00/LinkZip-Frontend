@@ -19,9 +19,12 @@ export function ResultCard(props: any) {
     const [isSucess, setSuccess] = useState(props.result.success);
     console.log(isSucess);
       
-    const handleCopy = () => {
+    const handleCopy = (e:  any) => {
+        
         // Logic to copy the URL to the clipboard
         navigator.clipboard.writeText(shortUrl);
+        e.target.innerText = 'Copied'
+
     };
   return (
     
@@ -34,14 +37,15 @@ export function ResultCard(props: any) {
         <CardDescription>Share it with people</CardDescription>
       </CardHeader>
       <CardContent>
-        <form>
+    
           <div className="grid w-full items-center gap-4">
             <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">Shortened URL</Label>
-              <code>{props.result.respJson.short_url}</code>
-                <button type="button" onClick={handleCopy}>
-                Copy
-                </button>
+
+                <Label htmlFor="name">Shortened URL</Label>
+                <div className="flex flex-row">
+                    <code>{props.result.respJson.short_url}</code>
+                    <Button variant="outline" onClick={handleCopy} className=" w-12 mx-4 -my-2">Copy</Button>
+                </div>
             </div>
 
             <div className="flex flex-col space-y-1.5">
@@ -50,7 +54,7 @@ export function ResultCard(props: any) {
             </div>
            
           </div>
-        </form>
+        
       </CardContent>
       <CardFooter className="flex justify-between">
         <Button variant="outline">Close</Button>
