@@ -24,7 +24,6 @@ export function ResultCard(props: any) {
         // Logic to copy the URL to the clipboard
         navigator.clipboard.writeText(shortUrl);
         e.target.innerText = 'Copied'
-
     };
   return (
     
