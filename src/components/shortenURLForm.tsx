@@ -27,6 +27,7 @@ export default function ShortenUrlForm() {
 
         if (!url.match(urlRegex)) {
             setInvalidUrl(true);
+            setSubmitting(false);
             return;
         }
 
