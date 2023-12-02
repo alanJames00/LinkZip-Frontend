@@ -11,7 +11,8 @@ export default function AboutMe() {
     
         </h1>
         <p className="max-w-[700px] text-lg text-muted-foreground">
-        Created My Alan James
+        Created By: Alan James
+        <br />
         License: MIT (OpenSource)
         </p>
       
